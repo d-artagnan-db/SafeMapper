@@ -20,6 +20,7 @@ import java.util.NoSuchElementException;
 public class DatabaseSchema implements DatabaseSchemaInterface {
 
     static final Log LOG = LogFactory.getLog(DatabaseSchema.class.getName());
+
     public Map<String, TableSchema> tableSchemas;
     private DatabaseSchema.CryptoType defaultPropertiesKey;
     private DatabaseSchema.CryptoType defaultPropertiesColumns;
@@ -30,6 +31,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     private boolean hasDefaultDatabaseProperties;
     private Boolean defaultEncryptionMode;
     private String databaseSchemaFile;
+
     public DatabaseSchema(String databaseSchemaFile) {
         if (databaseSchemaFile == null) {
             throw new IllegalStateException("Schema file name cannot be null.");

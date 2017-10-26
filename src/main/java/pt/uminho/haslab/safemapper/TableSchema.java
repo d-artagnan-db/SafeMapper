@@ -1,5 +1,6 @@
 package pt.uminho.haslab.safemapper;
 
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -18,6 +19,7 @@ import static pt.uminho.haslab.safemapper.Helpers.whichFpeInstance;
  */
 public class TableSchema {
     static final Log LOG = LogFactory.getLog(TableSchema.class.getName());
+
     private String tablename;
     //	Default Row-Key CryptoBox
     private DatabaseSchema.CryptoType defaultKeyCryptoType;
