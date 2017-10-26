@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f66cf17-f2dd-4486-bbfa-c3f92d6a7c2f" name="Default" comment="" />
+    <list default="true" id="8f66cf17-f2dd-4486-bbfa-c3f92d6a7c2f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/ClinidataSchemaTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__pt_uminho_haslab_CryptoEnv_1_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__pt_uminho_haslab_det_enc_1_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__pt_uminho_haslab_fpe_enc_1_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__pt_uminho_haslab_ope_enc_1_0_SNAPSHOT.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__pt_uminho_haslab_std_enc_1_0_SNAPSHOT.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/DatabaseSchema.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/DatabaseSchema.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Family.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Family.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Helpers.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Helpers.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Key.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Key.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/KeyFPE.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/KeyFPE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Qualifier.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/Qualifier.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/QualifierFPE.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/QualifierFPE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/TableSchema.class" afterPath="$PROJECT_DIR$/target/classes/pt/uminho/haslab/safemapper/TableSchema.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/safemapper.iml" afterPath="$PROJECT_DIR$/safemapper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Helpers.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Helpers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/QualifierFPE.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/QualifierFPE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java" afterPath="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,6 +40,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/safemapper$ClinidataSchemaTest.coverage" NAME="ClinidataSchemaTest Coverage Results" MODIFIED="1509039817834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileColors">
     <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
     <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
@@ -18,157 +50,180 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DatabaseSchema.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35">
-              <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1631#1632#0" expanded="true" />
-                <element signature="e#1671#1672#0" expanded="true" />
-                <element signature="e#2016#2032#0" expanded="true" />
-                <element signature="e#3706#3707#0" expanded="true" />
-                <element signature="e#3760#3761#0" expanded="true" />
-                <element signature="e#19486#19502#0" expanded="true" />
-                <element signature="e#23443#23444#0" expanded="true" />
-                <element signature="e#23506#23507#0" expanded="true" />
-                <element signature="e#23560#23561#0" expanded="true" />
-                <element signature="e#23615#23616#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Key.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TableSchema.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="469" column="92" lean-forward="false" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2033#2034#0" expanded="true" />
-                <element signature="e#2070#2071#0" expanded="true" />
-                <element signature="e#2120#2121#0" expanded="true" />
-                <element signature="e#2162#2163#0" expanded="true" />
-                <element signature="e#2229#2230#0" expanded="true" />
-                <element signature="e#2277#2278#0" expanded="true" />
-                <element signature="e#2512#2513#0" expanded="true" />
-                <element signature="e#2564#2565#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
-                <element signature="e#2828#2829#0" expanded="true" />
-                <element signature="e#2887#2888#0" expanded="true" />
-                <element signature="e#2941#2942#0" expanded="true" />
-                <element signature="e#2988#2989#0" expanded="true" />
-                <element signature="e#3039#3040#0" expanded="true" />
-                <element signature="e#3101#3102#0" expanded="true" />
-                <element signature="e#3158#3159#0" expanded="true" />
-                <element signature="e#3203#3204#0" expanded="true" />
-                <element signature="e#3248#3249#0" expanded="true" />
-                <element signature="e#3305#3306#0" expanded="true" />
-                <element signature="e#3353#3354#0" expanded="true" />
-                <element signature="e#3401#3402#0" expanded="true" />
-                <element signature="e#3449#3450#0" expanded="true" />
-                <element signature="e#3509#3510#0" expanded="true" />
-                <element signature="e#3560#3561#0" expanded="true" />
-                <element signature="e#3602#3603#0" expanded="true" />
-                <element signature="e#3651#3652#0" expanded="true" />
-                <element signature="e#3702#3703#0" expanded="true" />
-                <element signature="e#3751#3752#0" expanded="true" />
-                <element signature="e#3778#3779#0" expanded="true" />
-                <element signature="e#3809#3810#0" expanded="true" />
-                <element signature="e#5898#5906#0" expanded="true" />
-                <element signature="e#13748#13749#0" expanded="true" />
-                <element signature="e#13795#13796#0" expanded="true" />
-                <element signature="e#13833#13834#0" expanded="true" />
-                <element signature="e#13880#13881#0" expanded="true" />
-                <element signature="e#14870#14907#0" expanded="true" />
-                <element signature="e#15138#15139#0" expanded="true" />
-                <element signature="e#15194#15195#0" expanded="true" />
-                <element signature="e#15330#15358#0" expanded="true" />
-                <element signature="e#15660#15661#0" expanded="true" />
-                <element signature="e#15730#15731#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Helpers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Helpers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseSchemaInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchemaInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Family.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2341">
-              <caret line="159" column="38" lean-forward="false" selection-start-line="159" selection-start-column="38" selection-end-line="159" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QualifierFPE.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/QualifierFPE.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="78" column="33" lean-forward="false" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyFPE.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="76" column="39" lean-forward="true" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.49695864">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="DatabaseSchema.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1185">
+                  <caret line="477" column="31" lean-forward="false" selection-start-line="477" selection-start-column="31" selection-end-line="477" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1959#1975#0" expanded="true" />
+                    <element signature="e#19066#19082#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Assert.class" pinned="false" current-in-tab="false">
+            <entry file="jar://$PROJECT_DIR$/../m2_dev_rep/repository/junit/junit/4.11/junit-4.11.jar!/org/junit/Assert.class">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1972#1973#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Key.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="421">
+                  <caret line="44" column="22" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TableSchema.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="627">
+                  <caret line="268" column="46" lean-forward="false" selection-start-line="268" selection-start-column="46" selection-end-line="268" selection-end-column="46" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#15099#15135#0" expanded="true" />
+                    <element signature="e#15553#15580#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ClinidataSchemaTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/ClinidataSchemaTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1702">
+                  <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="q_engine.xml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/resources/q_engine.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="24">
+                  <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Family.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-445">
+                  <caret line="127" column="19" lean-forward="false" selection-start-line="127" selection-start-column="7" selection-end-line="127" selection-end-column="19" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#2197#2208#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Qualifier.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="781">
+                  <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1181#1182#0" expanded="true" />
+                    <element signature="e#1225#1226#0" expanded="true" />
+                    <element signature="e#1735#1751#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="QualifierFPE.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/QualifierFPE.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="304">
+                  <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+                  <folding>
+                    <element signature="e#1467#1468#0" expanded="true" />
+                    <element signature="e#1503#1504#0" expanded="true" />
+                    <element signature="e#1551#1552#0" expanded="true" />
+                    <element signature="e#1591#1592#0" expanded="true" />
+                    <element signature="e#1641#1642#0" expanded="true" />
+                    <element signature="e#1681#1682#0" expanded="true" />
+                    <element signature="e#1744#1745#0" expanded="true" />
+                    <element signature="e#1788#1789#0" expanded="true" />
+                    <marker date="1509021944000" expanded="false" signature="1816:1827" ph=" { " />
+                    <marker date="1509021944000" expanded="false" signature="1845:1851" ph=" }" />
+                    <marker date="1509021944000" expanded="false" signature="1888:1899" ph=" { " />
+                    <marker date="1509021944000" expanded="false" signature="1918:1924" ph=" }" />
+                    <marker date="1509021944000" expanded="false" signature="1954:1965" ph=" { " />
+                    <marker date="1509021944000" expanded="false" signature="1983:1989" ph=" }" />
+                    <marker date="1509021944000" expanded="false" signature="2029:2040" ph=" { " />
+                    <marker date="1509021944000" expanded="false" signature="2059:2065" ph=" }" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="KeyFPE.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="292">
+                  <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1169#1170#0" expanded="true" />
+                    <element signature="e#1205#1206#0" expanded="true" />
+                    <element signature="e#1253#1254#0" expanded="true" />
+                    <element signature="e#1293#1294#0" expanded="true" />
+                    <element signature="e#1343#1344#0" expanded="true" />
+                    <element signature="e#1383#1384#0" expanded="true" />
+                    <element signature="e#1446#1447#0" expanded="true" />
+                    <element signature="e#1490#1491#0" expanded="true" />
+                    <marker date="1509022074000" expanded="false" signature="1518:1529" ph=" { " />
+                    <marker date="1509022074000" expanded="false" signature="1547:1553" ph=" }" />
+                    <marker date="1509022074000" expanded="false" signature="1590:1601" ph=" { " />
+                    <marker date="1509022074000" expanded="false" signature="1620:1626" ph=" }" />
+                    <marker date="1509022074000" expanded="false" signature="1656:1667" ph=" { " />
+                    <marker date="1509022074000" expanded="false" signature="1685:1691" ph=" }" />
+                    <marker date="1509022074000" expanded="false" signature="1731:1742" ph=" { " />
+                    <marker date="1509022074000" expanded="false" signature="1761:1767" ph=" }" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="q_engine.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/resources/q_engine.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-511">
+                  <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -180,18 +235,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parseDa</find>
-      <find>getSchema</find>
-      <find>ctypes</find>
-      <find>initializeEnabledCryptoTypes</find>
-      <find>enabledCryptoTypes</find>
-      <find>schema.</find>
-      <find>getTableName</find>
-      <find>temp_schema</find>
-      <find>enabledCryptoTypes.</find>
       <find>whi</find>
       <find>temp_getTable</find>
+      <find>CryptoType</find>
+      <find>CryptoTechnique</find>
+      <find>setD</find>
+      <find>defaultKey</find>
+      <find>parseKey</find>
+      <find>setColumnPadding</find>
+      <find>defaultColumnPadding</find>
+      <find>set</find>
+      <find>parse</find>
+      <find>parseSc</find>
+      <find>cryptoType</find>
+      <find>setKey</find>
+      <find>Databaseschema</find>
+      <find>DatabaseSchema&quot;</find>
+      <find>DatabaseSchema</find>
+      <find>System</find>
+      <find>equals</find>
+      <find>equals(</find>
+      <find>initializeEnabledCryptoTypes</find>
+      <find>switch</find>
+      <find>enabledCryptoTypes</find>
+      <find>enabledCrypto</find>
+      <find>enableCryptoType</find>
+      <find>addQualifier(Qualifier</find>
+      <find>addFamily</find>
+      <find>ad</find>
+      <find>addQualifier</find>
+      <find>addFamil</find>
     </findStrings>
+    <replaceStrings>
+      <replace>DatabaseSchema</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -211,15 +288,20 @@
         <option value="$PROJECT_DIR$/src/main/java/schema/SchemaParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/SchemaParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/SchemaParser.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java" />
         <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/FPEHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Helpers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/CryptoTechnique.java" />
+        <option value="$PROJECT_DIR$/../CryptoEnv/src/main/java/pt/uminho/haslab/cryptoenv/CryptoTechnique.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/CryptoType.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/QualifierFPE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Helpers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ClinidataSchemaTest.java" />
       </list>
     </option>
   </component>
@@ -236,9 +318,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="819" />
+    <option name="x" value="-143" />
     <option name="y" value="-1080" />
-    <option name="width" value="958" />
+    <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -257,7 +339,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -291,16 +372,40 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="safemapper" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="safemapper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="safemapper" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="safemapper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="safemapper" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="safemapper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="safemapper" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.testRunning" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -319,7 +424,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ClinidataSchemaTest">
+    <configuration name="ClinidataSchemaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="safemapper" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClinidataSchemaTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -400,6 +525,11 @@
       <properties />
       <listeners />
     </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ClinidataSchemaTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -414,53 +544,91 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 47m 44s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 49m 05s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 50m 36s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 52m 45s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 53m 19s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 53m 31s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 54m 18s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 55m 33s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 18h 56m 45s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClinidataSchemaTest - 2017.10.26 at 19h 00m 16s.xml">
+      <configuration name="ClinidataSchemaTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-143" y="-1080" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14696486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39920557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java</url>
+          <line>531</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseSchema.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseSchema.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="625">
+          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#10065#10066#0" expanded="false" />
+            <element signature="e#10148#10149#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -472,120 +640,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java">
+    <entry file="file://$PROJECT_DIR$/../CryptoEnv/src/main/java/pt/uminho/haslab/cryptoenv/CryptoTechnique.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-            <element signature="e#2016#2032#0" expanded="true" />
-            <element signature="e#3706#3707#0" expanded="true" />
-            <element signature="e#3760#3761#0" expanded="true" />
-            <element signature="e#19486#19502#0" expanded="true" />
-            <element signature="e#23443#23444#0" expanded="true" />
-            <element signature="e#23506#23507#0" expanded="true" />
-            <element signature="e#23560#23561#0" expanded="true" />
-            <element signature="e#23615#23616#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="130">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/Object.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/CryptoType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="true" />
-            <element signature="e#10148#10149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#1792#1808#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Helpers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2341">
-          <caret line="159" column="38" lean-forward="false" selection-start-line="159" selection-start-column="38" selection-end-line="159" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="469" column="92" lean-forward="false" selection-start-line="469" selection-start-column="92" selection-end-line="469" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2162#2163#0" expanded="true" />
-            <element signature="e#2229#2230#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-            <element signature="e#2512#2513#0" expanded="true" />
-            <element signature="e#2564#2565#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2828#2829#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
-            <element signature="e#2941#2942#0" expanded="true" />
-            <element signature="e#2988#2989#0" expanded="true" />
-            <element signature="e#3039#3040#0" expanded="true" />
-            <element signature="e#3101#3102#0" expanded="true" />
-            <element signature="e#3158#3159#0" expanded="true" />
-            <element signature="e#3203#3204#0" expanded="true" />
-            <element signature="e#3248#3249#0" expanded="true" />
-            <element signature="e#3305#3306#0" expanded="true" />
-            <element signature="e#3353#3354#0" expanded="true" />
-            <element signature="e#3401#3402#0" expanded="true" />
-            <element signature="e#3449#3450#0" expanded="true" />
-            <element signature="e#3509#3510#0" expanded="true" />
-            <element signature="e#3560#3561#0" expanded="true" />
-            <element signature="e#3602#3603#0" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3702#3703#0" expanded="true" />
-            <element signature="e#3751#3752#0" expanded="true" />
-            <element signature="e#3778#3779#0" expanded="true" />
-            <element signature="e#3809#3810#0" expanded="true" />
-            <element signature="e#5898#5906#0" expanded="true" />
-            <element signature="e#13748#13749#0" expanded="true" />
-            <element signature="e#13795#13796#0" expanded="true" />
-            <element signature="e#13833#13834#0" expanded="true" />
-            <element signature="e#13880#13881#0" expanded="true" />
-            <element signature="e#14870#14907#0" expanded="true" />
-            <element signature="e#15138#15139#0" expanded="true" />
-            <element signature="e#15194#15195#0" expanded="true" />
-            <element signature="e#15330#15358#0" expanded="true" />
-            <element signature="e#15660#15661#0" expanded="true" />
-            <element signature="e#15730#15731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="76" column="39" lean-forward="true" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
+        <state relative-caret-position="0">
+          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -594,8 +668,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/QualifierFPE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="78" column="33" lean-forward="false" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+        <state relative-caret-position="304">
+          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding>
+            <element signature="e#1467#1468#0" expanded="true" />
+            <element signature="e#1503#1504#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1591#1592#0" expanded="true" />
+            <element signature="e#1641#1642#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1744#1745#0" expanded="true" />
+            <element signature="e#1788#1789#0" expanded="true" />
+            <marker date="1509021944000" expanded="false" signature="1816:1827" ph=" { " />
+            <marker date="1509021944000" expanded="false" signature="1845:1851" ph=" }" />
+            <marker date="1509021944000" expanded="false" signature="1888:1899" ph=" { " />
+            <marker date="1509021944000" expanded="false" signature="1918:1924" ph=" }" />
+            <marker date="1509021944000" expanded="false" signature="1954:1965" ph=" { " />
+            <marker date="1509021944000" expanded="false" signature="1983:1989" ph=" }" />
+            <marker date="1509021944000" expanded="false" signature="2029:2040" ph=" { " />
+            <marker date="1509021944000" expanded="false" signature="2059:2065" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/KeyFPE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1169#1170#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1253#1254#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1383#1384#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <marker date="1509022074000" expanded="false" signature="1518:1529" ph=" { " />
+            <marker date="1509022074000" expanded="false" signature="1547:1553" ph=" }" />
+            <marker date="1509022074000" expanded="false" signature="1590:1601" ph=" { " />
+            <marker date="1509022074000" expanded="false" signature="1620:1626" ph=" }" />
+            <marker date="1509022074000" expanded="false" signature="1656:1667" ph=" { " />
+            <marker date="1509022074000" expanded="false" signature="1685:1691" ph=" }" />
+            <marker date="1509022074000" expanded="false" signature="1731:1742" ph=" { " />
+            <marker date="1509022074000" expanded="false" signature="1761:1767" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Key.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="44" column="22" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -603,17 +728,164 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/q_engine.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Qualifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1735#1751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/DatabaseSchema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="477" column="31" lean-forward="false" selection-start-line="477" selection-start-column="31" selection-end-line="477" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1959#1975#0" expanded="true" />
+            <element signature="e#19066#19082#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../m2_dev_rep/repository/junit/junit/4.11/junit-4.11.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="e#1972#1973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/Family.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-445">
+          <caret line="127" column="19" lean-forward="false" selection-start-line="127" selection-start-column="7" selection-end-line="127" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2197#2208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pt/uminho/haslab/safemapper/TableSchema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="268" column="46" lean-forward="false" selection-start-line="268" selection-start-column="46" selection-end-line="268" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15099#15135#0" expanded="true" />
+            <element signature="e#15553#15580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ClinidataSchemaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1702">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>safemapper</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -2,7 +2,6 @@ package pt.uminho.haslab.safemapper;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,9 +20,9 @@ public class TableSchema {
     static final Log LOG = LogFactory.getLog(TableSchema.class.getName());
     private String tablename;
     //	Default Row-Key CryptoBox
-    private CryptoTechnique.CryptoType defaultKeyCryptoType;
+    private DatabaseSchema.CryptoType defaultKeyCryptoType;
     //	Default Qualifiers CryptoBox
-    private CryptoTechnique.CryptoType defaultColumnsCryptoType;
+    private DatabaseSchema.CryptoType defaultColumnsCryptoType;
     //	Default Row-Key format size
     private int defaultKeyFormatSize;
     //	Default values format size
@@ -41,12 +40,12 @@ public class TableSchema {
     //  Collection of the database column families (and qualifiers)
     private List<Family> columnFamilies;
 
-    private Map<CryptoTechnique.CryptoType, Boolean> enabledCryptoTypes;
+    private Map<DatabaseSchema.CryptoType, Boolean> enabledCryptoTypes;
 
     public TableSchema() {
         this.tablename = "";
-        this.defaultKeyCryptoType = CryptoTechnique.CryptoType.PLT;
-        this.defaultColumnsCryptoType = CryptoTechnique.CryptoType.PLT;
+        this.defaultKeyCryptoType = DatabaseSchema.CryptoType.PLT;
+        this.defaultColumnsCryptoType = DatabaseSchema.CryptoType.PLT;
         this.defaultKeyFormatSize = 0;
         this.defaultColumnFormatSize = 0;
         this.defaultKeyPadding = false;
@@ -67,30 +66,33 @@ public class TableSchema {
         this.tablename = tablename;
     }
 
-    public CryptoTechnique.CryptoType getDefaultKeyCryptoType() {
+    public DatabaseSchema.CryptoType getDefaultKeyCryptoType() {
         return this.defaultKeyCryptoType;
     }
 
-    public void setDefaultKeyCryptoType(CryptoTechnique.CryptoType cType) {
-        this.defaultKeyCryptoType = cType;
+    public void setDefaultKeyCryptoType(DatabaseSchema.CryptoType cType) {
+        defaultKeyCryptoType = cType;
+        key.setCryptoType(cType);
         this.enableCryptoType(cType);
     }
 
-    public CryptoTechnique.CryptoType getDefaultColumnsCryptoType() {
+    public DatabaseSchema.CryptoType getDefaultColumnsCryptoType() {
         return this.defaultColumnsCryptoType;
     }
 
-    public void setDefaultColumnsCryptoType(CryptoTechnique.CryptoType cType) {
-        this.defaultColumnsCryptoType = cType;
-        this.enableCryptoType(cType);
+    public void setDefaultColumnsCryptoType(DatabaseSchema.CryptoType cType) {
+        defaultColumnsCryptoType = cType;
+        enableCryptoType(cType);
     }
 
     public int getDefaultKeyFormatSize() {
         return this.defaultKeyFormatSize;
+
     }
 
     public void setDefaultKeyFormatSize(int formatSize) {
-        this.defaultKeyFormatSize = formatSize;
+        defaultKeyFormatSize = formatSize;
+        key.setFormatSize(formatSize);
     }
 
     public int getDefaultColumnFormatSize() {
@@ -106,7 +108,8 @@ public class TableSchema {
     }
 
     public void setDefaultKeyPadding(Boolean padding) {
-        this.defaultKeyPadding = padding;
+        defaultKeyPadding = padding;
+        key.setKeyPadding(padding);
     }
 
     public Boolean getDefaultColumnPadding() {
@@ -210,7 +213,7 @@ public class TableSchema {
      * @param formatSize column family default size
      * @param qualifiers set of column qualifiers
      */
-    public void addFamily(String familyName, CryptoTechnique.CryptoType cType, int formatSize, Boolean padding, List<Qualifier> qualifiers) {
+    public void addFamily(String familyName, DatabaseSchema.CryptoType cType, int formatSize, Boolean padding, List<Qualifier> qualifiers) {
         Family family = new Family();
         family.setFamilyName(familyName);
 
@@ -259,6 +262,11 @@ public class TableSchema {
             fam.setColumnPadding(defaultColumnPadding);
         }
 
+        List<Qualifier> qualifiers = fam.getQualifiers();
+        for (Qualifier qual : qualifiers) {
+            enableCryptoType(qual.getCryptoType());
+        }
+        enableCryptoType(fam.getCryptoType());
         this.columnFamilies.add(fam);
     }
 
@@ -309,8 +317,8 @@ public class TableSchema {
             f.addQualifier(qualifier);
             this.columnFamilies.set(index, f);
             this.enableCryptoType(qualifier.getCryptoType());
-            if (qualifier.getCryptoType().equals(CryptoTechnique.CryptoType.OPE)) {
-                this.enableCryptoType(CryptoTechnique.CryptoType.STD);
+            if (qualifier.getCryptoType().equals(DatabaseSchema.CryptoType.OPE)) {
+                this.enableCryptoType(DatabaseSchema.CryptoType.STD);
             }
         }
     }
@@ -334,8 +342,8 @@ public class TableSchema {
      * @return the respective CryptoType
      */
 //	TODO: profile
-    public CryptoTechnique.CryptoType getCryptoTypeFromQualifier(String family, String qualifier) {
-        CryptoTechnique.CryptoType cType = null;
+    public DatabaseSchema.CryptoType getCryptoTypeFromQualifier(String family, String qualifier) {
+        DatabaseSchema.CryptoType cType = null;
         for (Family f : this.columnFamilies) {
             if (f.getFamilyName().equals(family)) {
                 for (Qualifier q : f.getQualifiers()) {
@@ -454,21 +462,21 @@ public class TableSchema {
     }
 
     //TODO : CHECK if ConccurrentHashMap is the correct type for the var. Are locks needed for correct behavior.
-    private Map<CryptoTechnique.CryptoType, Boolean> initializeEnabledCryptoTypes() {
-        Map<CryptoTechnique.CryptoType, Boolean> cTypes = new ConcurrentHashMap<CryptoTechnique.CryptoType, Boolean>();
-        for (CryptoTechnique.CryptoType ct : CryptoTechnique.CryptoType.values()) {
+    private Map<DatabaseSchema.CryptoType, Boolean> initializeEnabledCryptoTypes() {
+        Map<DatabaseSchema.CryptoType, Boolean> cTypes = new ConcurrentHashMap<DatabaseSchema.CryptoType, Boolean>();
+        for (DatabaseSchema.CryptoType ct : DatabaseSchema.CryptoType.values()) {
             cTypes.put(ct, false);
         }
         return cTypes;
     }
 
-    private void enableCryptoType(CryptoTechnique.CryptoType cType) {
+    private void enableCryptoType(DatabaseSchema.CryptoType cType) {
         this.enabledCryptoTypes.put(cType, true);
     }
 
-    public List<CryptoTechnique.CryptoType> getEnabledCryptoTypes() {
-        List<CryptoTechnique.CryptoType> cTypes = new ArrayList<CryptoTechnique.CryptoType>(this.enabledCryptoTypes.size());
-        for (CryptoTechnique.CryptoType ct : this.enabledCryptoTypes.keySet()) {
+    public List<DatabaseSchema.CryptoType> getEnabledCryptoTypes() {
+        List<DatabaseSchema.CryptoType> cTypes = new ArrayList<DatabaseSchema.CryptoType>(this.enabledCryptoTypes.size());
+        for (DatabaseSchema.CryptoType ct : this.enabledCryptoTypes.keySet()) {
             if (enabledCryptoTypes.get(ct).equals(true)) {
                 cTypes.add(ct);
             }
@@ -499,4 +507,30 @@ public class TableSchema {
 
         return sb.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TableSchema)) return false;
+
+        TableSchema that = (TableSchema) o;
+
+        if (defaultKeyFormatSize != that.defaultKeyFormatSize) return false;
+        if (defaultColumnFormatSize != that.defaultColumnFormatSize) return false;
+        if (tablename != null ? !tablename.equals(that.tablename) : that.tablename != null) return false;
+        if (defaultKeyCryptoType != that.defaultKeyCryptoType) return false;
+        if (defaultColumnsCryptoType != that.defaultColumnsCryptoType) return false;
+        if (defaultKeyPadding != null ? !defaultKeyPadding.equals(that.defaultKeyPadding) : that.defaultKeyPadding != null)
+            return false;
+        if (defaultColumnPadding != null ? !defaultColumnPadding.equals(that.defaultColumnPadding) : that.defaultColumnPadding != null)
+            return false;
+        if (defaultEncryptionMode != null ? !defaultEncryptionMode.equals(that.defaultEncryptionMode) : that.defaultEncryptionMode != null)
+            return false;
+        if (key != null ? !key.equals(that.key) : that.key != null) return false;
+        if (columnFamilies != null ? !columnFamilies.equals(that.columnFamilies) : that.columnFamilies != null)
+            return false;
+        return enabledCryptoTypes != null ? enabledCryptoTypes.equals(that.enabledCryptoTypes) : that.enabledCryptoTypes == null;
+    }
+
+
 }

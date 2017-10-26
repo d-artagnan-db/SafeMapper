@@ -1,7 +1,5 @@
 package pt.uminho.haslab.safemapper;
 
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,20 +13,20 @@ import static pt.uminho.haslab.safemapper.Helpers.whichFpeInstance;
 public class Family {
 
     private String familyName;
-    private CryptoTechnique.CryptoType cryptoType;
+    private DatabaseSchema.CryptoType cryptoType;
     private int formatSize;
     private List<Qualifier> qualifiers;
     private Boolean columnPadding;
 
     public Family() {
         this.familyName = "";
-        this.cryptoType = CryptoTechnique.CryptoType.PLT;
+        this.cryptoType = DatabaseSchema.CryptoType.PLT;
         this.formatSize = 0;
         this.qualifiers = new ArrayList<Qualifier>();
         this.columnPadding = null;
     }
 
-    public Family(String familyName, CryptoTechnique.CryptoType cType, int formatSize, Boolean columnPadding) {
+    public Family(String familyName, DatabaseSchema.CryptoType cType, int formatSize, Boolean columnPadding) {
         this.familyName = familyName;
         this.cryptoType = cType;
         this.formatSize = formatSize;
@@ -36,7 +34,7 @@ public class Family {
         this.columnPadding = columnPadding;
     }
 
-    public Family(String familyName, CryptoTechnique.CryptoType cType, int formatSize, Boolean columnPadding, List<Qualifier> quals) {
+    public Family(String familyName, DatabaseSchema.CryptoType cType, int formatSize, Boolean columnPadding, List<Qualifier> quals) {
         this.familyName = familyName;
         this.cryptoType = cType;
         this.formatSize = formatSize;
@@ -53,11 +51,11 @@ public class Family {
         this.familyName = familyName;
     }
 
-    public CryptoTechnique.CryptoType getCryptoType() {
+    public DatabaseSchema.CryptoType getCryptoType() {
         return this.cryptoType;
     }
 
-    public void setCryptoType(CryptoTechnique.CryptoType cType) {
+    public void setCryptoType(DatabaseSchema.CryptoType cType) {
         this.cryptoType = cType;
     }
 
@@ -101,8 +99,8 @@ public class Family {
      * @param cryptoType    CryptoBox type
      * @param formatSize    size of qualifier
      */
-    public void addQualifier(String qualifierName, CryptoTechnique.CryptoType cryptoType, int formatSize, Boolean columnPadding, Map<String, String> properties) {
-        CryptoTechnique.CryptoType cType;
+    public void addQualifier(String qualifierName, DatabaseSchema.CryptoType cryptoType, int formatSize, Boolean columnPadding, Map<String, String> properties) {
+        DatabaseSchema.CryptoType cType;
         int fSize = 0;
         Boolean padding = false;
 
@@ -212,4 +210,19 @@ public class Family {
         }
         return sb.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Family)) return false;
+
+        Family family = (Family) o;
+
+        if (formatSize != family.formatSize) return false;
+        if (familyName != null ? !familyName.equals(family.familyName) : family.familyName != null) return false;
+        if (cryptoType != family.cryptoType) return false;
+        if (qualifiers != null ? !qualifiers.equals(family.qualifiers) : family.qualifiers != null) return false;
+        return columnPadding != null ? columnPadding.equals(family.columnPadding) : family.columnPadding == null;
+    }
+
 }

@@ -1,16 +1,14 @@
 package pt.uminho.haslab.safemapper;
 
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
-
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
 public class Helpers {
-    public static CryptoTechnique.FFX whichFpeInstance(String instance) {
+    public static DatabaseSchema.FFX whichFpeInstance(String instance) {
         if (instance.equals("FF1")) {
-            return CryptoTechnique.FFX.FF1;
+            return DatabaseSchema.FFX.FF1;
         } else if (instance.equals("FF3")) {
-            return CryptoTechnique.FFX.FF3;
+            return DatabaseSchema.FFX.FF3;
         }
         return null;
     }

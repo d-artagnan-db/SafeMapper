@@ -1,7 +1,5 @@
 package pt.uminho.haslab.safemapper;
 
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,20 +10,20 @@ import java.util.Map;
 public class Qualifier {
 
     private String qualifierName;
-    private CryptoTechnique.CryptoType cryptoType;
+    private DatabaseSchema.CryptoType cryptoType;
     private int formatSize;
     private Boolean padding;
     private Map<String, String> properties;
 
     public Qualifier() {
         this.qualifierName = "";
-        this.cryptoType = CryptoTechnique.CryptoType.PLT;
+        this.cryptoType = DatabaseSchema.CryptoType.PLT;
         this.formatSize = 0;
         this.padding = null;
         this.properties = new HashMap<String, String>();
     }
 
-    public Qualifier(String name, CryptoTechnique.CryptoType cType, int format, Boolean padding, Map<String, String> properties) {
+    public Qualifier(String name, DatabaseSchema.CryptoType cType, int format, Boolean padding, Map<String, String> properties) {
         this.qualifierName = name;
         this.cryptoType = cType;
         this.formatSize = format;
@@ -37,11 +35,11 @@ public class Qualifier {
         return this.qualifierName;
     }
 
-    public CryptoTechnique.CryptoType getCryptoType() {
+    public DatabaseSchema.CryptoType getCryptoType() {
         return this.cryptoType;
     }
 
-    public void setCryptoType(CryptoTechnique.CryptoType cryptoType) {
+    public void setCryptoType(DatabaseSchema.CryptoType cryptoType) {
         this.cryptoType = cryptoType;
     }
 
@@ -91,6 +89,21 @@ public class Qualifier {
             sb.append(s).append(": ").append(this.properties.get(s)).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Qualifier)) return false;
+
+        Qualifier qualifier = (Qualifier) o;
+
+        if (formatSize != qualifier.formatSize) return false;
+        if (qualifierName != null ? !qualifierName.equals(qualifier.qualifierName) : qualifier.qualifierName != null)
+            return false;
+        if (cryptoType != qualifier.cryptoType) return false;
+        if (padding != null ? !padding.equals(qualifier.padding) : qualifier.padding != null) return false;
+        return properties != null ? properties.equals(qualifier.properties) : qualifier.properties == null;
     }
 
 }

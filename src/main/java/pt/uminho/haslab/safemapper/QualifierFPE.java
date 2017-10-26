@@ -1,7 +1,5 @@
 package pt.uminho.haslab.safemapper;
 
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
-
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,28 +12,28 @@ import static pt.uminho.haslab.safemapper.Helpers.whichFpeInstance;
  */
 public class QualifierFPE extends Qualifier {
     private String qualifierName;
-    private CryptoTechnique.CryptoType cryptoType;
+    private DatabaseSchema.CryptoType cryptoType;
     private int formatSize;
     private Boolean padding;
     private Map<String, String> properties;
     private String instance;
-    private CryptoTechnique.FFX fpe_instance;
+    private DatabaseSchema.FFX fpe_instance;
     private int radix;
     private String tweak;
 
     public QualifierFPE() {
         this.qualifierName = "";
-        this.cryptoType = CryptoTechnique.CryptoType.FPE;
+        this.cryptoType = DatabaseSchema.CryptoType.FPE;
         this.formatSize = 0;
         this.padding = null;
         this.properties = new HashMap<String, String>();
         this.instance = "FF1";
-        this.fpe_instance = CryptoTechnique.FFX.FF1;
+        this.fpe_instance = DatabaseSchema.FFX.FF1;
         this.radix = 10;
         this.tweak = "";
     }
 
-    public QualifierFPE(String qualifierName, CryptoTechnique.CryptoType cType, int formatSize, Boolean padding, Map<String, String> prop, String instance, int radix, String tweak) {
+    public QualifierFPE(String qualifierName, DatabaseSchema.CryptoType cType, int formatSize, Boolean padding, Map<String, String> prop, String instance, int radix, String tweak) {
         super(qualifierName, cType, formatSize, padding, prop);
         this.instance = instance;
         this.fpe_instance = whichFpeInstance(instance);
@@ -51,11 +49,11 @@ public class QualifierFPE extends Qualifier {
         this.instance = instance;
     }
 
-    public CryptoTechnique.FFX getFpeInstance() {
+    public DatabaseSchema.FFX getFpeInstance() {
         return this.fpe_instance;
     }
 
-    public void setFpeInstance(CryptoTechnique.FFX instance) {
+    public void setFpeInstance(DatabaseSchema.FFX instance) {
         this.fpe_instance = instance;
     }
 

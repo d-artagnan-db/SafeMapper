@@ -1,6 +1,5 @@
 package pt.uminho.haslab.safemapper;
 
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
 
 import java.io.UnsupportedEncodingException;
 
@@ -13,25 +12,25 @@ import static pt.uminho.haslab.safemapper.Helpers.whichFpeInstance;
  */
 public class KeyFPE extends Key {
 
-    private CryptoTechnique.CryptoType cryptoType;
+    private DatabaseSchema.CryptoType cryptoType;
     private int formatSize;
     private String instance;
-    private CryptoTechnique.FFX fpe_instance;
+    private DatabaseSchema.FFX fpe_instance;
     private int radix;
     private String tweak;
     private Boolean keyPadding;
 
     public KeyFPE() {
-        this.cryptoType = CryptoTechnique.CryptoType.FPE;
+        this.cryptoType = DatabaseSchema.CryptoType.FPE;
         this.formatSize = 10;
         this.instance = "FF1";
-        this.fpe_instance = CryptoTechnique.FFX.FF1;
+        this.fpe_instance = DatabaseSchema.FFX.FF1;
         this.radix = 10;
         this.tweak = "";
         this.keyPadding = null;
     }
 
-    public KeyFPE(CryptoTechnique.CryptoType cType, int formatSize, Boolean padding, String instance, int radix, String tweak) {
+    public KeyFPE(DatabaseSchema.CryptoType cType, int formatSize, Boolean padding, String instance, int radix, String tweak) {
         super(cType, formatSize, padding);
         this.instance = instance;
         this.fpe_instance = whichFpeInstance(instance);
@@ -48,11 +47,11 @@ public class KeyFPE extends Key {
         this.instance = instance;
     }
 
-    public CryptoTechnique.FFX getFpeInstance() {
+    public DatabaseSchema.FFX getFpeInstance() {
         return this.fpe_instance;
     }
 
-    public void setFpeInstance(CryptoTechnique.FFX instance) {
+    public void setFpeInstance(DatabaseSchema.FFX instance) {
         this.fpe_instance = instance;
     }
 

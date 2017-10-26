@@ -6,7 +6,6 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import pt.uminho.haslab.cryptoenv.CryptoTechnique;
 
 import java.io.File;
 import java.util.HashMap;
@@ -19,22 +18,18 @@ import java.util.NoSuchElementException;
  * Used to parse the database schema file and store the database
  */
 public class DatabaseSchema implements DatabaseSchemaInterface {
+
     static final Log LOG = LogFactory.getLog(DatabaseSchema.class.getName());
     public Map<String, TableSchema> tableSchemas;
-
-    private CryptoTechnique.CryptoType defaultPropertiesKey;
-    private CryptoTechnique.CryptoType defaultPropertiesColumns;
+    private DatabaseSchema.CryptoType defaultPropertiesKey;
+    private DatabaseSchema.CryptoType defaultPropertiesColumns;
     private Boolean defaultPropertiesKeyPadding;
     private Boolean defaultPropertiesColumnPadding;
     private int defaultPropertiesKeyFormatSize;
     private int defaultPropertiesColFormatSize;
     private boolean hasDefaultDatabaseProperties;
-
     private Boolean defaultEncryptionMode;
-
     private String databaseSchemaFile;
-
-
     public DatabaseSchema(String databaseSchemaFile) {
         if (databaseSchemaFile == null) {
             throw new IllegalStateException("Schema file name cannot be null.");
@@ -96,10 +91,9 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
 
         } catch (DocumentException e) {
-            LOG.error("CryptoWorker:DatabaseSchema:parse:DocumentException:" + e.getMessage());
+            LOG.error(e.getMessage());
         }
     }
-
 
     private boolean strIsEmpty(String str) {
         return str.length() > 0 ? false : true;
@@ -160,7 +154,6 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
         return ts;
     }
-
 
     /**
      * parseTablename(rootElement : Element) method : parse the table name
@@ -243,7 +236,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
             tableSchema.setDefaultColumnPadding(this.defaultPropertiesColumnPadding);
             tableSchema.setEncryptionMode(this.defaultEncryptionMode);
         } else {
-            throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDefault:Default arguments specification cannot be null nor empty.");
+            throw new NullPointerException("Default arguments specification cannot be null nor empty.");
         }
     }
 
@@ -255,7 +248,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     private void parseKey(Element rootElement, TableSchema tableSchema) {
         Element keyElement = rootElement.element("key");
         if (keyElement != null) {
-            String cryptotechnique = keyElement.elementText("cryptotechnique");
+            String cryptoTechnique = keyElement.elementText("cryptoTechnique");
             String formatsize = keyElement.elementText("formatsize");
             String keypadding = keyElement.elementText("keypadding");
 
@@ -263,8 +256,8 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
             String radix = keyElement.elementText("radix");
             String tweak = keyElement.elementText("tweak");
 
-            if (cryptotechnique == null || strIsEmpty(cryptotechnique)) {
-                cryptotechnique = tableSchema.getDefaultKeyCryptoType().toString();
+            if (cryptoTechnique == null || strIsEmpty(cryptoTechnique)) {
+                cryptoTechnique = tableSchema.getDefaultKeyCryptoType().toString();
             }
 
             if (formatsize == null || strIsEmpty(formatsize)) {
@@ -275,16 +268,16 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                 keypadding = String.valueOf(tableSchema.getDefaultKeyPadding());
             }
 
-            if (cryptotechnique.equals("FPE")) {
+            if (cryptoTechnique.equals("FPE")) {
                 validateFPEArguments(instance, radix, tweak);
             }
 
-            if (!cryptotechnique.equals("FPE")) {
-                Key key = new Key(switchCryptoType(cryptotechnique), formatSizeIntegerValue(formatsize), paddingBooleanConvertion(keypadding));
+            if (!cryptoTechnique.equals("FPE")) {
+                Key key = new Key(switchCryptoType(cryptoTechnique), formatSizeIntegerValue(formatsize), paddingBooleanConvertion(keypadding));
                 tableSchema.setKey(key);
             } else {
                 Key key = new KeyFPE(
-                        switchCryptoType(cryptotechnique),
+                        switchCryptoType(cryptoTechnique),
                         formatSizeIntegerValue(formatsize),
                         paddingBooleanConvertion(keypadding),
                         instance,
@@ -292,9 +285,6 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                         tweak);
                 tableSchema.setKey(key);
             }
-        } else {
-//			If key arguments are not specified in schema file create key with the default values
-            tableSchema.setKey(new Key(tableSchema.getDefaultKeyCryptoType(), tableSchema.getDefaultKeyFormatSize(), tableSchema.getDefaultKeyPadding()));
         }
     }
 
@@ -345,7 +335,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                 List<Element> qualifiersElement = family.elements("qualifier");
                 for (Element qualifier : qualifiersElement) {
                     String qualifierName = qualifier.elementText("name");
-                    String cryptotechniqueQualifier = qualifier.elementText("cryptotechnique");
+                    String qualifierCryptoTechnique = qualifier.elementText("cryptotechnique");
                     String qualifierFormatsize = qualifier.elementText("colformatsize");
                     String qualifierPadding = qualifier.elementText("colpadding");
 
@@ -360,8 +350,8 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                         throw new NullPointerException("Column qualifier name cannot be null nor empty.");
                     }
 
-                    if (cryptotechniqueQualifier == null || strIsEmpty(cryptotechniqueQualifier)) {
-                        cryptotechniqueQualifier = familyCryptoTechnique;
+                    if (qualifierCryptoTechnique == null || strIsEmpty(qualifierCryptoTechnique)) {
+                        qualifierCryptoTechnique = familyCryptoTechnique;
                     }
 
                     if (qualifierFormatsize == null || strIsEmpty(qualifierFormatsize)) {
@@ -372,15 +362,15 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                         qualifierPadding = familyPadding;
                     }
 
-                    if (cryptotechniqueQualifier.equals("FPE")) {
+                    if (qualifierCryptoTechnique.equals("FPE")) {
                         validateFPEArguments(instance, radix, tweak);
                     }
 
                     Qualifier q;
-                    if (!cryptotechniqueQualifier.equals("FPE")) {
+                    if (!qualifierCryptoTechnique.equals("FPE")) {
                         q = new Qualifier(
                                 qualifierName,
-                                switchCryptoType(cryptotechniqueQualifier),
+                                switchCryptoType(qualifierCryptoTechnique),
                                 formatSizeIntegerValue(qualifierFormatsize),
                                 paddingBooleanConvertion(qualifierPadding),
                                 properties);
@@ -388,7 +378,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                     } else {
                         q = new QualifierFPE(
                                 qualifierName,
-                                switchCryptoType(cryptotechniqueQualifier),
+                                switchCryptoType(qualifierCryptoTechnique),
                                 formatSizeIntegerValue(qualifierFormatsize),
                                 paddingBooleanConvertion(qualifierPadding),
                                 properties,
@@ -400,7 +390,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
                     tableSchema.addQualifier(familyName, q);
 
-                    if (cryptotechniqueQualifier.equals("OPE")) {
+                    if (qualifierCryptoTechnique.equals("OPE")) {
                         String stdQualifierName = qualifierName + "_STD";
                         String stdCType = "STD";
 
@@ -420,7 +410,6 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
         }
     }
 
-
     /**
      * parseMiscellaneous(properties : List<Element>) method : parse random properties from the database schema
      *
@@ -435,28 +424,8 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
         return result;
     }
 
-    //	FIXME: read cType with Enum.valueOf()
-    private CryptoTechnique.CryptoType switchCryptoType(String cType) {
-        if (cType == null) {
-            return null;
-        } else {
-            if (cType.equals("STD")) {
-                return CryptoTechnique.CryptoType.STD;
-            } else if (cType.equals("DET")) {
-                return CryptoTechnique.CryptoType.DET;
-
-            } else if (cType.equals("OPE")) {
-                return CryptoTechnique.CryptoType.OPE;
-            } else if (cType.equals("FPE")) {
-                return CryptoTechnique.CryptoType.FPE;
-            } else if (cType.equals("PLT")) {
-                return CryptoTechnique.CryptoType.PLT;
-
-            }
-            return CryptoTechnique.CryptoType.PLT;
-        }
-
-
+    private DatabaseSchema.CryptoType switchCryptoType(String cType) {
+        return cType == null ? null : DatabaseSchema.CryptoType.valueOf(cType);
     }
 
     private int formatSizeIntegerValue(String formatSize) {
@@ -539,4 +508,16 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     public TableSchema getSchema(String tableName) {
         return this.tableSchemas.get(tableName);
     }
+
+    /**
+     * CryptoType: used to verify, instantiate and create Cryptographic Techniques with a given Type.
+     */
+    public enum CryptoType {
+        PLT, STD, DET, OPE, FPE, SMPC, XOR;
+    }
+
+    public enum FFX {
+        FF1, FF3
+    }
+
 }
