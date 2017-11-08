@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * DatabaseSchema class.
@@ -36,8 +37,11 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
         if (databaseSchemaFile == null) {
             throw new IllegalStateException("Schema file name cannot be null.");
         }
-
-        this.tableSchemas = new HashMap<String, TableSchema>();
+        /*
+         *Concurrent access to the tables should be possible but not concurrent updates.
+         * The TableSchemas should be defined only once on this constructor.
+         */
+        this.tableSchemas = new ConcurrentHashMap<String, TableSchema>();
         this.hasDefaultDatabaseProperties = false;
         this.databaseSchemaFile = databaseSchemaFile;
 
@@ -74,13 +78,13 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
      */
     private void parseDatabaseTables() {
         try {
-//			Read schema file
+            // Read schema file
             File inputFile = new File(this.databaseSchemaFile);
             SAXReader reader = new SAXReader();
             Document document = reader.read(inputFile);
 
 
-//			Map the schema file into an Element object
+            //Map the schema file into an Element object
             Element rootElement = document.getRootElement();
 
             parseDatabaseDefaultProperties(rootElement.element("default"));
@@ -94,11 +98,12 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
         } catch (DocumentException e) {
             LOG.error(e.getMessage());
+            throw new IllegalStateException(e);
         }
     }
 
     private boolean strIsEmpty(String str) {
-        return str.length() > 0 ? false : true;
+        return str.length() <= 0;
     }
 
     private void parseDatabaseDefaultProperties(Element rootElement) {
@@ -112,25 +117,25 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
             String encryptionMode = rootElement.elementText("encryptionmode");
 
             if (key == null || strIsEmpty(key)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default Row-Key Cryptographic Type cannot be null nor empty.");
+                throw new NullPointerException("Default Row-Key Cryptographic Type cannot be null nor empty.");
             }
             if (cols == null || strIsEmpty(cols)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default columns Cryptographic Type cannot be null nor empty.");
+                throw new NullPointerException("Default columns Cryptographic Type cannot be null nor empty.");
             }
             if (keyPadding == null || strIsEmpty(keyPadding)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default key padding cannot be null nor empty.");
+                throw new NullPointerException("Default key padding cannot be null nor empty.");
             }
             if (colPadding == null || strIsEmpty(colPadding)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default columns padding cannot be null nor empty.");
+                throw new NullPointerException("Default columns padding cannot be null nor empty.");
             }
             if (keySize == null || strIsEmpty(keySize)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default key format size cannot be null nor empty.");
+                throw new NullPointerException("Default key format size cannot be null nor empty.");
             }
             if (colSize == null || strIsEmpty(colSize)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default columns format size cannot be null nor empty.");
+                throw new NullPointerException("Default columns format size cannot be null nor empty.");
             }
             if (encryptionMode == null || strIsEmpty(encryptionMode)) {
-                throw new NullPointerException("CryptoWorker:DatabaseSchema:parseDatabaseDefaultProperties:Default encryption mode cannot be null nor empty.");
+                throw new NullPointerException("Default encryption mode cannot be null nor empty.");
             }
 
             this.defaultPropertiesKey = switchCryptoType(key);
@@ -142,13 +147,12 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
             this.hasDefaultDatabaseProperties = true;
             this.defaultEncryptionMode = modeConversion(encryptionMode);
         } else {
-            throw new NullPointerException("DatabaseSchema:parseDatabaseDefaultProperties:Default element cannot be null.");
+            throw new NullPointerException("Default element cannot be null.");
         }
     }
 
     private TableSchema parseTable(Element rootElement) {
         TableSchema ts = new TableSchema();
-
         parseTablename(rootElement, ts);
         parseTableDefaultProperties(rootElement, ts);
         parseKey(rootElement, ts);
@@ -165,8 +169,9 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     private void parseTablename(Element rootElement, TableSchema tableSchema) {
         Element nameElement = rootElement.element("name");
         String name = nameElement.getText();
+
         if (name == null || strIsEmpty(name)) {
-            throw new NullPointerException("CryptoWorker:DatabaseSchema:parseTablename:Table name cannot be null nor empty.");
+            throw new NullPointerException("Table name cannot be null nor empty.");
         }
 
         tableSchema.setTablename(name);
