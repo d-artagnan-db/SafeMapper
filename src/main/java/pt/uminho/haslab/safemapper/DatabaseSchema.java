@@ -22,6 +22,21 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
     static final Log LOG = LogFactory.getLog(DatabaseSchema.class.getName());
 
+
+    /**
+     * Tests whether a column is protected with secret sharing or not. If a
+     * column is protected with another technique it must return false for now.
+     */
+    public static boolean isProtectedColumn(TableSchema schema, byte[] family, byte[] qualifier) {
+        String sFamily = new String(family);
+        String sQualifier = new String(qualifier);
+
+        CryptoType type = schema.getCryptoTypeFromQualifier(
+                sFamily, sQualifier);
+        return type.equals(DatabaseSchema.CryptoType.SMPC);
+    }
+
+
     public Map<String, TableSchema> tableSchemas;
     private DatabaseSchema.CryptoType defaultPropertiesKey;
     private DatabaseSchema.CryptoType defaultPropertiesColumns;
