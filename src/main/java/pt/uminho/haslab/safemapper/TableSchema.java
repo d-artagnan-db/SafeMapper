@@ -367,25 +367,46 @@ public class TableSchema {
 
     }
 
-//	public CryptoTechnique.CryptoType getCryptoTypeFromQualifier(String family, String qualifier) {
-//		CryptoTechnique.CryptoType cType = null;
-//		Iterator<Family> family_iterator = this.columnFamilies.iterator();
-//		boolean catched = false;
-//		while(family_iterator.hasNext() && !catched) {
-//			Family temp_family = family_iterator.next();
-//			if(temp_family.getFamilyName().equals(family)) {
-//				Iterator<Qualifier> qualifier_iterator = temp_family.getQualifiers().iterator();
-//				while(qualifier_iterator.hasNext() && !catched) {
-//					Qualifier temp_qualifier = qualifier_iterator.next();
-//					if(temp_qualifier.getName().equals(qualifier)) {
-//						catched = true;
-//						cType = temp_qualifier.getCryptoType();
-//					}
-//				}
-//			}
-//		}
-//		return cType;
-//	}
+    public void setColumnProperty(String family, String qualifier, String key, String value){
+        for (Family f : this.getColumnFamilies()) {
+            if (f.getFamilyName().equals(family)) {
+                for (Qualifier q : f.getQualifiers()) {
+                    if (q.getName().equals(qualifier)) {
+                        q.getProperties().put(key, value);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    public boolean isIntegerColumn(String family, String qualifier){
+        String type = null;
+        for (Family f : this.columnFamilies) {
+            if (f.getFamilyName().equals(family)) {
+                for (Qualifier q : f.getQualifiers()) {
+                    if (q.getName().equals(qualifier)) {
+                        type = q.getProperties().get("type");
+                        break;
+                    }
+
+                }
+                break;
+            }
+        }
+
+        if(type != null){
+            LOG.debug("Found column with type " + type);
+            System.out.println("Found column with type " + type);
+            return  type.equals("Integer");
+        }
+        LOG.debug("Column " + family+":"+qualifier +"  was not found");
+        System.out.println("Found column with type " + type);
+        return false;
+    }
+
+
 
     /**
      * getGeneratorTypeFromQualifier(family : String, qualifier : String)  method : get the generator type of a given family:qualifier (e.g., String, Date, Integer)

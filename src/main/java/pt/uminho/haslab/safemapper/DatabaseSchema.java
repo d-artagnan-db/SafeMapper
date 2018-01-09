@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static pt.uminho.haslab.safemapper.DatabaseSchema.CryptoType.*;
+
 /**
  * DatabaseSchema class.
  * Used to parse the database schema file and store the database
@@ -33,7 +35,24 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
         CryptoType type = schema.getCryptoTypeFromQualifier(
                 sFamily, sQualifier);
-        return type.equals(DatabaseSchema.CryptoType.SMPC);
+        return type.equals(SMPC) || type.equals(ISMPC);
+    }
+
+
+    public static boolean isIntegerProtectedColumn(TableSchema schema, byte[] family, byte[] qualifier) {
+        String sFamily = new String(family);
+        String sQualifier = new String(qualifier);
+
+        CryptoType type = schema.getCryptoTypeFromQualifier(
+                sFamily, sQualifier);
+        return type.equals(ISMPC);
+    }
+
+    public static boolean isIntegerType(TableSchema schema,  byte[] family, byte[] qualifier){
+        String sFamily = new String(family);
+        String sQualifier = new String(qualifier);
+
+        return schema.isIntegerColumn(sFamily, sQualifier);
     }
 
 
@@ -447,7 +466,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     }
 
     private DatabaseSchema.CryptoType switchCryptoType(String cType) {
-        return cType == null ? null : DatabaseSchema.CryptoType.valueOf(cType);
+        return cType == null ? null : valueOf(cType);
     }
 
     private int formatSizeIntegerValue(String formatSize) {
@@ -535,7 +554,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
      * CryptoType: used to verify, instantiate and create Cryptographic Techniques with a given Type.
      */
     public enum CryptoType {
-        PLT, STD, DET, OPE, FPE, SMPC, XOR;
+        PLT, STD, DET, OPE, FPE, SMPC, XOR, ISMPC;
     }
 
     public enum FFX {
