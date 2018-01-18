@@ -122,6 +122,9 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     private void parseDatabaseTables() {
         try {
             // Read schema file
+            if(LOG.isDebugEnabled()){
+                LOG.debug("Parsing databaseSchemaFile " + this.databaseSchemaFile);
+            }
             File inputFile = new File(this.databaseSchemaFile);
             SAXReader reader = new SAXReader();
             Document document = reader.read(inputFile);
