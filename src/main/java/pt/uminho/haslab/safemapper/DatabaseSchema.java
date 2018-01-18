@@ -35,7 +35,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
 
         CryptoType type = schema.getCryptoTypeFromQualifier(
                 sFamily, sQualifier);
-        return type.equals(SMPC) || type.equals(ISMPC);
+        return type.equals(SMPC) || type.equals(ISMPC) || type.equals(LSMPC);
     }
 
 
@@ -46,6 +46,15 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
         CryptoType type = schema.getCryptoTypeFromQualifier(
                 sFamily, sQualifier);
         return type.equals(ISMPC);
+    }
+
+    public static boolean isLongProtectedColumn(TableSchema schema, byte[] family, byte[] qualifier) {
+        String sFamily = new String(family);
+        String sQualifier = new String(qualifier);
+
+        CryptoType type = schema.getCryptoTypeFromQualifier(
+                sFamily, sQualifier);
+        return type.equals(LSMPC);
     }
 
     public static boolean isIntegerType(TableSchema schema,  byte[] family, byte[] qualifier){
@@ -554,7 +563,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
      * CryptoType: used to verify, instantiate and create Cryptographic Techniques with a given Type.
      */
     public enum CryptoType {
-        PLT, STD, DET, OPE, FPE, SMPC, XOR, ISMPC;
+        PLT, STD, DET, OPE, FPE, XOR, SMPC, ISMPC, LSMPC;
     }
 
     public enum FFX {
