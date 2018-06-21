@@ -301,7 +301,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     private void parseKey(Element rootElement, TableSchema tableSchema) {
         Element keyElement = rootElement.element("key");
         if (keyElement != null) {
-            String cryptoTechnique = keyElement.elementText("cryptoTechnique");
+            String cryptoTechnique = keyElement.elementText("cryptotechnique");
             String formatsize = keyElement.elementText("formatsize");
             String keypadding = keyElement.elementText("keypadding");
 
