@@ -367,7 +367,7 @@ public class TableSchema {
 
     }
 
-    public void setColumnProperty(String family, String qualifier, String key, String value){
+    public void setColumnProperty(String family, String qualifier, String key, String value) {
         for (Family f : this.getColumnFamilies()) {
             if (f.getFamilyName().equals(family)) {
                 for (Qualifier q : f.getQualifiers()) {
@@ -381,7 +381,7 @@ public class TableSchema {
         }
     }
 
-    public boolean isIntegerColumn(String family, String qualifier){
+    public boolean isIntegerColumn(String family, String qualifier) {
         String type = null;
         for (Family f : this.columnFamilies) {
             if (f.getFamilyName().equals(family)) {
@@ -396,16 +396,15 @@ public class TableSchema {
             }
         }
 
-        if(type != null){
+        if (type != null) {
             LOG.debug("Found column with type " + type);
             System.out.println("Found column with type " + type);
-            return  type.equals("Integer");
+            return type.equals("Integer");
         }
-        LOG.debug("Column " + family+":"+qualifier +"  was not found");
+        LOG.debug("Column " + family + ":" + qualifier + "  was not found");
         System.out.println("Found column with type " + type);
         return false;
     }
-
 
 
     /**

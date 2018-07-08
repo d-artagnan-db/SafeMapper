@@ -82,11 +82,13 @@ public class Family {
         return qualifiersTemp;
     }
 
-    public void setQualifiers(List<Qualifier> qualifiers) {
-        this.qualifiers = new ArrayList<Qualifier>();
-        for (Qualifier q : qualifiers) {
-            this.qualifiers.add(q);
+    public Qualifier getQualifier(String qualifierName){
+        for(Qualifier q: this.qualifiers){
+            if(q.getName().equals(qualifierName)){
+                return q;
+            }
         }
+        return null;
     }
 
 

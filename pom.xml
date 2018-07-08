@@ -6,7 +6,7 @@
 
     <groupId>pt.uminho.haslab</groupId>
     <artifactId>safemapper</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <dependencies>
         <dependency>
             <groupId>dom4j</groupId>

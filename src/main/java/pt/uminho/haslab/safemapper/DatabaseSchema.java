@@ -23,7 +23,30 @@ import static pt.uminho.haslab.safemapper.DatabaseSchema.CryptoType.*;
 public class DatabaseSchema implements DatabaseSchemaInterface {
 
     static final Log LOG = LogFactory.getLog(DatabaseSchema.class.getName());
+    public Map<String, TableSchema> tableSchemas;
+    private DatabaseSchema.CryptoType defaultPropertiesKey;
+    private DatabaseSchema.CryptoType defaultPropertiesColumns;
+    private Boolean defaultPropertiesKeyPadding;
+    private Boolean defaultPropertiesColumnPadding;
+    private int defaultPropertiesKeyFormatSize;
+    private int defaultPropertiesColFormatSize;
+    private boolean hasDefaultDatabaseProperties;
+    private Boolean defaultEncryptionMode;
+    private String databaseSchemaFile;
+    public DatabaseSchema(String databaseSchemaFile) {
+        if (databaseSchemaFile == null) {
+            throw new IllegalStateException("Schema file name cannot be null.");
+        }
+        /*
+         *Concurrent access to the tables should be possible but not concurrent updates.
+         * The TableSchemas should be defined only once on this constructor.
+         */
+        this.tableSchemas = new ConcurrentHashMap<String, TableSchema>();
+        this.hasDefaultDatabaseProperties = false;
+        this.databaseSchemaFile = databaseSchemaFile;
 
+        this.parseDatabaseTables();
+    }
 
     /**
      * Tests whether a column is protected with secret sharing or not. If a
@@ -37,7 +60,6 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
                 sFamily, sQualifier);
         return type.equals(SMPC) || type.equals(ISMPC) || type.equals(LSMPC);
     }
-
 
     public static boolean isIntegerProtectedColumn(TableSchema schema, byte[] family, byte[] qualifier) {
         String sFamily = new String(family);
@@ -57,38 +79,11 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
         return type.equals(LSMPC);
     }
 
-    public static boolean isIntegerType(TableSchema schema,  byte[] family, byte[] qualifier){
+    public static boolean isIntegerType(TableSchema schema, byte[] family, byte[] qualifier) {
         String sFamily = new String(family);
         String sQualifier = new String(qualifier);
 
         return schema.isIntegerColumn(sFamily, sQualifier);
-    }
-
-
-    public Map<String, TableSchema> tableSchemas;
-    private DatabaseSchema.CryptoType defaultPropertiesKey;
-    private DatabaseSchema.CryptoType defaultPropertiesColumns;
-    private Boolean defaultPropertiesKeyPadding;
-    private Boolean defaultPropertiesColumnPadding;
-    private int defaultPropertiesKeyFormatSize;
-    private int defaultPropertiesColFormatSize;
-    private boolean hasDefaultDatabaseProperties;
-    private Boolean defaultEncryptionMode;
-    private String databaseSchemaFile;
-
-    public DatabaseSchema(String databaseSchemaFile) {
-        if (databaseSchemaFile == null) {
-            throw new IllegalStateException("Schema file name cannot be null.");
-        }
-        /*
-         *Concurrent access to the tables should be possible but not concurrent updates.
-         * The TableSchemas should be defined only once on this constructor.
-         */
-        this.tableSchemas = new ConcurrentHashMap<String, TableSchema>();
-        this.hasDefaultDatabaseProperties = false;
-        this.databaseSchemaFile = databaseSchemaFile;
-
-        this.parseDatabaseTables();
     }
 
     public Map<String, TableSchema> getSchemas() {
@@ -122,7 +117,7 @@ public class DatabaseSchema implements DatabaseSchemaInterface {
     private void parseDatabaseTables() {
         try {
             // Read schema file
-            if(LOG.isDebugEnabled()){
+            if (LOG.isDebugEnabled()) {
                 LOG.debug("Parsing databaseSchemaFile " + this.databaseSchemaFile);
             }
             File inputFile = new File(this.databaseSchemaFile);
